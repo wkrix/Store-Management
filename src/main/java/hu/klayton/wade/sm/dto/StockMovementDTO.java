@@ -3,10 +3,14 @@ package hu.klayton.wade.sm.dto;
 import hu.klayton.wade.sm.domain.StockMovement;
 import hu.klayton.wade.sm.domain.StockMovement.Type;
 
+import javax.validation.constraints.Digits;
+
 /**
  * @author Walter Krix <wkrix89@gmail.hu>
  */
 public class StockMovementDTO {
+
+    private static final String NOT_NUMBER_MSG = "{notNumber.message}";
 
     private Long id;
 
@@ -14,6 +18,7 @@ public class StockMovementDTO {
 
     private Long wareHouseId;
 
+    @Digits(integer = 5, fraction = 0, message = NOT_NUMBER_MSG)
     private int quantity;
 
     private Type type;

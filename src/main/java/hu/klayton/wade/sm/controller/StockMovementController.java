@@ -1,6 +1,5 @@
 package hu.klayton.wade.sm.controller;
 
-import hu.klayton.wade.sm.dao.StockMovementRepository;
 import hu.klayton.wade.sm.domain.StockMovement;
 import hu.klayton.wade.sm.dto.StockMovementDTO;
 import hu.klayton.wade.sm.dto.WareHouseDTO;
