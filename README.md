@@ -4,7 +4,7 @@ I played a little with associations and cascade types.
 
 Include
 -------------------------
-* Spring Boo
+* Spring Boot
 * Thymeleaf, Bootstrap
 * JPA 2.0 (Hibernate/postgresql/Spring Data JPA)
 
