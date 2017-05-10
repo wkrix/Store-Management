@@ -21,11 +21,15 @@ import java.util.List;
 @Transactional
 public class ProductServiceImpl implements ProductService {
 
-    @Autowired
-    private ProductRepository productRepository;
+    private final ProductRepository productRepository;
+
+    private final StockMovementRepository stockMovementRepository;
 
     @Autowired
-    private StockMovementRepository stockMovementRepository;
+    public ProductServiceImpl(ProductRepository productRepository, StockMovementRepository stockMovementRepository) {
+        this.productRepository = productRepository;
+        this.stockMovementRepository = stockMovementRepository;
+    }
 
 
     @PostConstruct

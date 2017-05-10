@@ -22,14 +22,18 @@ import java.util.List;
 @Transactional
 public class StockMovementServiceImpl implements StockMovementService {
 
-    @Autowired
-    private StockMovementRepository stockMovementRepository;
+    private final StockMovementRepository stockMovementRepository;
+
+    private final ProductRepository productRepository;
+
+    private final WareHouseRepository wareHouseRepository;
 
     @Autowired
-    private ProductRepository productRepository;
-
-    @Autowired
-    private WareHouseRepository wareHouseRepository;
+    public StockMovementServiceImpl(StockMovementRepository stockMovementRepository, ProductRepository productRepository, WareHouseRepository wareHouseRepository) {
+        this.stockMovementRepository = stockMovementRepository;
+        this.productRepository = productRepository;
+        this.wareHouseRepository = wareHouseRepository;
+    }
 
     @Override
     public void save(StockMovementDTO stockMovementDTO) {

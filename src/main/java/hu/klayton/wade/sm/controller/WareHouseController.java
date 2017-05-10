@@ -20,8 +20,12 @@ import java.util.List;
 @RequestMapping(value = "/warehouse")
 public class WareHouseController {
 
+    private final WareHouseService wareHouseService;
+
     @Autowired
-    private WareHouseService wareHouseService;
+    public WareHouseController(WareHouseService wareHouseService) {
+        this.wareHouseService = wareHouseService;
+    }
 
     @RequestMapping(value = "/list_warehouses", method = RequestMethod.GET)
     public String listWareHouses(final Model model) {

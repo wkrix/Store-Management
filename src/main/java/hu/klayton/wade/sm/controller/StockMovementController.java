@@ -23,11 +23,15 @@ import java.util.List;
 @RequestMapping(value = "/stockmovement")
 public class StockMovementController {
 
-    @Autowired
-    private StockMovementService stockMovementService;
+    private final StockMovementService stockMovementService;
+
+    private final WareHouseService wareHouseService;
 
     @Autowired
-    private WareHouseService wareHouseService;
+    public StockMovementController(StockMovementService stockMovementService, WareHouseService wareHouseService) {
+        this.stockMovementService = stockMovementService;
+        this.wareHouseService = wareHouseService;
+    }
 
 
     @RequestMapping(value = "/do_stockmovement/{productId}", method = RequestMethod.GET)

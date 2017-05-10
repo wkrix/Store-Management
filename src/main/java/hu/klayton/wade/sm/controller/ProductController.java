@@ -20,8 +20,12 @@ import java.util.List;
 @RequestMapping(value = "/product")
 public class ProductController {
 
+    private final ProductService productService;
+
     @Autowired
-    private ProductService productService;
+    public ProductController(ProductService productService) {
+        this.productService = productService;
+    }
 
     @RequestMapping(value = "/list_products", method = RequestMethod.GET)
     public String listProducts(final Model model) {

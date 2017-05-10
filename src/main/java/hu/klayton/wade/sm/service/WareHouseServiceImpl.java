@@ -21,11 +21,15 @@ import java.util.List;
 @Transactional
 public class WareHouseServiceImpl implements WareHouseService {
 
-    @Autowired
-    private WareHouseRepository wareHouseRepository;
+    private final WareHouseRepository wareHouseRepository;
+
+    private final StockMovementRepository stockMovementRepository;
 
     @Autowired
-    private StockMovementRepository stockMovementRepository;
+    public WareHouseServiceImpl(WareHouseRepository wareHouseRepository, StockMovementRepository stockMovementRepository) {
+        this.wareHouseRepository = wareHouseRepository;
+        this.stockMovementRepository = stockMovementRepository;
+    }
 
     @PostConstruct
     private void initDummyData() {
