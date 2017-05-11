@@ -6,7 +6,7 @@
     <groupId>hu.klayton.wade.sm</groupId>
     <artifactId>store-management-app</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <packaging>war</packaging>
+    <packaging>jar</packaging>
 
     <name>Store Management</name>
     <description>Simple store management project</description>
